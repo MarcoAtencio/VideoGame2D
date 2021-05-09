@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerControler : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class playerControler : MonoBehaviour
     Animator m_Animator;
     SpriteRenderer m_SpriteRenderer;
 
-    //public Image Barravida;
+    public Image Barravida;
 
-    //float vidaActual = 5;
-    //float vidaMax = 5;
+    float vidaActual = 5;
+    float vidaMax = 5;
     float runSpeed = 3;
-    float jumpSpeed = 5;
+    float jumpSpeed = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,14 +65,22 @@ public class playerControler : MonoBehaviour
         }
 
 
-        /*
+        
         if (Barravida == null)
         {
             Barravida = GameObject.Find("life").GetComponent<Image>();
             Barravida.fillAmount = vidaActual / vidaMax;
 
         }
-        */
+        
+    }
+
+
+
+    public void lifeUpdate(int cant)
+    {
+        vidaActual += cant;
+        Barravida.fillAmount = vidaActual / vidaMax;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

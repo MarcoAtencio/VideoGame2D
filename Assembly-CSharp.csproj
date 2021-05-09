@@ -56,9 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\Script\playerControler.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\Script\coinControler.cs" />
+    <Compile Include="Assets\Script\coinSpawner.cs" />
+    <Compile Include="Assets\Script\scoreManager.cs" />
+    <Compile Include="Assets\Script\MenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
