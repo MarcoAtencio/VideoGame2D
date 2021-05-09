@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Renderer fondo;
-
+    
 
     void Start()
     {
@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-
+        
         fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.05f, 0) * Time.deltaTime;
         
+
     }
 }
