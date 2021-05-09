@@ -15,7 +15,7 @@ public class playerControler : MonoBehaviour
     //float vidaActual = 5;
     //float vidaMax = 5;
     float runSpeed = 3;
-    float jumpSpeed = 4;
+    float jumpSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
