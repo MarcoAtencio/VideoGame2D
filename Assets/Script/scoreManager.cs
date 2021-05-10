@@ -12,6 +12,7 @@ public class scoreManager : MonoBehaviour
 
     void Start()
     {
+        
         if (ScoreManager == null)
 
         {
@@ -22,6 +23,7 @@ public class scoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
 
     }
 

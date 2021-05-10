@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
 
         
-        fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.05f, 0) * Time.deltaTime;
+        fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.01f, 0) * Time.deltaTime;
         
 
     }

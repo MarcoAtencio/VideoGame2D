@@ -57,12 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\Script\playerControler.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\coinControler.cs" />
-    <Compile Include="Assets\Script\coinSpawner.cs" />
-    <Compile Include="Assets\Script\scoreManager.cs" />
     <Compile Include="Assets\Script\MenuController.cs" />
+    <Compile Include="Assets\Script\playerControler.cs" />
+    <Compile Include="Assets\Script\scoreManager.cs" />
+    <Compile Include="Assets\Script\coinSpawner.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

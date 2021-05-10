@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class playerControler : MonoBehaviour
 {
     public static playerControler PlayerControler;
+    public Transform firePoint;
     bool canJump;
     Rigidbody2D m_Rigidbody2D;
     Animator m_Animator;
     SpriteRenderer m_SpriteRenderer;
+    public GameObject Bala;
 
     public Image Barravida;
 
@@ -17,6 +19,8 @@ public class playerControler : MonoBehaviour
     float vidaMax = 5;
     float runSpeed = 3;
     float jumpSpeed = 6;
+
+    bool direction = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,25 +42,21 @@ public class playerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey("left"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_Rigidbody2D.velocity = new Vector2(-runSpeed, m_Rigidbody2D.velocity.y);
-            m_Animator.SetBool("Correr", true);
-            m_SpriteRenderer.flipX = true;
-        }
+            Vector3 direction_;
+            if ( direction) direction_ = Vector3.right;
+            else direction_ = Vector3.left;
+            GameObject bullet = Instantiate(Bala, transform.position + direction_ * 0.1f, Quaternion.identity);
+            bullet.GetComponent<bullet>().SetDirection(direction_);
 
+        }
+      
         if (!Input.GetKey("left") && !Input.GetKey("right"))
         {
             m_Animator.SetBool("Correr", false);
         }
-        if (Input.GetKey("right"))
-        {
-            m_Rigidbody2D.velocity = new Vector2(runSpeed, m_Rigidbody2D.velocity.y);
-            m_Animator.SetBool("Correr", true);
-            m_SpriteRenderer.flipX = false;
-        }
-
+       
         if (Input.GetKeyDown("up") && canJump)
         {
             canJump = false;
@@ -91,5 +91,27 @@ public class playerControler : MonoBehaviour
             m_Animator.SetBool("Saltar", false);
 
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey("left"))
+        {
+
+            m_Rigidbody2D.velocity = new Vector2(-runSpeed, m_Rigidbody2D.velocity.y);
+            m_Animator.SetBool("Correr", true);
+            m_SpriteRenderer.flipX = true;
+            direction = false;
+        }
+
+        if (Input.GetKey("right"))
+        {
+            m_Rigidbody2D.velocity = new Vector2(runSpeed, m_Rigidbody2D.velocity.y);
+            m_Animator.SetBool("Correr", true);
+            m_SpriteRenderer.flipX = false;
+            direction = true;
+            
+        }
+
     }
 }
