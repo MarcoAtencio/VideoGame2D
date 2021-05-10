@@ -47,7 +47,7 @@ public class playerControler : MonoBehaviour
             Vector3 direction_;
             if ( direction) direction_ = Vector3.right;
             else direction_ = Vector3.left;
-            GameObject bullet = Instantiate(Bala, transform.position + direction_ * 0.1f, Quaternion.identity);
+            GameObject bullet = Instantiate(Bala, firePoint.position + direction_ * 0.1f, Quaternion.identity);
             bullet.GetComponent<bullet>().SetDirection(direction_);
 
         }
