@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    /*
+
      private Animator animator_bala;
      private Rigidbody2D Bala;
-     float speed = 5;
      float timer;
      public bool impacto = false;
      public bool direction = false;
      // Start is called before the first frame update
 
-     */
+
 
     private float speed = 4;
     private Vector2 Direction;
@@ -22,44 +21,30 @@ public class bullet : MonoBehaviour
     {
 
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-     /*
         Bala = GetComponent<Rigidbody2D>();
         animator_bala = gameObject.GetComponent<Animator>();
         animator_bala.SetBool("impacto", false);
-        */
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-      /*
+   
         if(impacto == true)
         {
-            timer += Time.deltaTime;
             Bala.velocity = new Vector2(0, 0);
-            if (timer >= 0.2f)
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
             {
                 
                 Destroy(gameObject);
             }
         }
-        else
-        {
-            if (direction == true)
-            {
-                Bala.velocity = new Vector2(+speed, 0);
-            }
-            else
-            {
-                Bala.velocity = new Vector2(-speed, 0);
-            }
-            
-        }
-        */
+
     }
 
-    /*
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -72,7 +57,8 @@ public class bullet : MonoBehaviour
             
         }
     }
-    */
+
+
     private void FixedUpdate()
     {
         m_Rigidbody2D.velocity = Direction * speed;
